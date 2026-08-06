@@ -1,0 +1,18 @@
+[project]
+name = "sentragent"
+version = "0.1.0"
+description = "Test and monitor AI agents before they break in production."
+requires-python = ">=3.9"
+license = {text = "Apache-2.0"}
+authors = [{name = "Sentragent"}]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Sentragent/sentragent-sdk"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,20 @@
+{
+  "name": "sentragent",
+  "version": "0.1.0",
+  "description": "Test and monitor AI agents before they break in production.",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sentragent/sentragent-sdk.git",
+    "directory": "typescript"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/index.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

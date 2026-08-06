@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+
+# Node / TypeScript
+node_modules/
+dist/
+*.tsbuildinfo
+.npm/
+
+# Env & secrets
+.env
+.env.local
+*.pem
+*.key
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Sentragent local artifacts
+.sentragent/
+reports/
