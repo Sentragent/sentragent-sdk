@@ -1,17 +1,17 @@
 # Sentragent
 
-**Testez vos agents IA avant qu'ils ne cassent quelque chose en production.**
+**Test your AI agents before they break something in production.**
 
-> Gartner prévoit que plus de 40% des projets d'agents IA en entreprise échoueront d'ici 2027 — pas par manque de capacité du modèle, mais par manque de contrôle avant et après le déploiement.
+> Gartner predicts that over 40% of enterprise AI agent projects will fail by 2027 — not because of model limitations, but because of insufficient controls before and after deployment.
 
-Sentragent est un SDK open-source d'instrumentation, de test et de surveillance continue pour les agents IA en production. Compatible LangChain, CrewAI et OpenAI Agents SDK.
+Sentragent is an open-source SDK for instrumenting, testing, and continuously monitoring AI agents in production. Compatible with LangChain, CrewAI, and the OpenAI Agents SDK.
 
-## Pourquoi Sentragent
+## Why Sentragent
 
-- **Génération automatique de scénarios de test adversariaux** à partir de vos prompts existants — pas besoin d'écrire vos cas de test à la main.
-- **Scoring de conformité comportementale configurable** (LLM-as-judge) — vos règles métier, pas des règles génériques.
-- **Détection de dérive en production** — soyez alerté avant vos utilisateurs, pas après.
-- **Intégration CI/CD native** (GitHub Actions) — testez vos agents à chaque déploiement, comme votre code.
+- **Automatic adversarial scenario generation** from your existing prompts — no need to hand-write your test cases.
+- **Configurable behavioral scoring** (LLM-as-judge) — your business rules, not generic ones.
+- **Production drift detection** — get alerted before your users do.
+- **Native CI/CD integration** (GitHub Actions) — test your agents on every deploy, just like your code.
 
 ## Installation
 
@@ -23,7 +23,7 @@ pip install sentragent
 npm install sentragent
 ```
 
-## Démarrage rapide
+## Quickstart
 
 ```python
 from sentragent import Sentinel
@@ -44,31 +44,31 @@ const report = await sentinel.runScenarios({ autoGenerate: 5 });
 console.log(report.summary());
 ```
 
-## Statut du projet
+## Project status
 
-Sentragent est en développement actif (phase design partners). L'API n'est pas encore stable. Voir [CHANGELOG.md](./CHANGELOG.md) pour le suivi des versions.
+Sentragent is in active development (design partner phase). The API is not yet stable. See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
-## Programme Design Partners
+## Design Partner Program
 
-On cherche 5 à 10 équipes ayant au moins un agent IA en pré-production ou en production pour tester l'outil sur leurs vrais agents. Accès gratuit à vie au tier Team, influence directe sur la roadmap, tarif préférentiel à vie.
+Looking for 5-10 teams with at least one AI agent in pre-production or production to test the tool on their real agents. Free lifetime access to the Team tier, direct influence on the roadmap, lifetime preferred pricing.
 
-Candidater : [calendly.com/marlinibukun](https://calendly.com/marlinibukun)
+Apply: [calendly.com/marlinibukun](https://calendly.com/marlinibukun)
 
-## Structure du repo
+## Repo structure
 
 ```
 sentragent-sdk/
-├── python/           # SDK Python (package "sentragent")
-├── typescript/       # SDK TypeScript/Node (package "sentragent")
-├── examples/         # Exemples d'intégration (LangChain, CrewAI, OpenAI Agents SDK)
+├── python/           # Python SDK (package "sentragent")
+├── typescript/       # TypeScript/Node SDK (package "sentragent")
+├── examples/         # Integration examples (LangChain, CrewAI, OpenAI Agents SDK)
 ├── CHANGELOG.md
 └── LICENSE
 ```
 
-## Licence
+## License
 
-Apache License 2.0 — voir [LICENSE](./LICENSE).
+Apache License 2.0 — see [LICENSE](./LICENSE).
 
 ## Contact
 
-marlinibukun@gmail.com · construit par [jaceX10](https://github.com/Sentragent)
+marlinibukun@gmail.com · built by [jaceX10](https://github.com/Sentragent)
