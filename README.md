@@ -15,12 +15,18 @@ Sentragent is an open-source SDK for instrumenting, testing, and continuously mo
 
 ## Installation
 
+Not yet published to PyPI / npm (coming soon). For now, install from source:
+
 ```bash
 # Python
-pip install sentragent
+git clone https://github.com/Sentragent/sentragent-sdk.git
+cd sentragent-sdk/python
+pip install -e .
 
 # TypeScript / Node
-npm install sentragent
+git clone https://github.com/Sentragent/sentragent-sdk.git
+cd sentragent-sdk/typescript
+npm install && npm run build
 ```
 
 ## Quickstart

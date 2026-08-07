@@ -13,6 +13,7 @@ Initial scaffolding — pre-release, phase design partners.
 - `examples/langchain_example.py` — integration starting point for LangChain agents.
 
 ### Not yet implemented (roadmap)
+- Publish to PyPI and npm (currently install from source only).
 - Minimal local dashboard (pass/fail, latency, cost per scenario).
 - CI/CD integration (GitHub Actions) for scenario runs on every deploy.
 - Production drift detection.
