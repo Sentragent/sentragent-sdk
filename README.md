@@ -83,7 +83,7 @@ Sentragent is in active development (design partner phase). The API is not yet s
 
 Looking for 5-10 teams with at least one AI agent in pre-production or production to test the tool on their real agents. Free lifetime access to the Team tier, direct influence on the roadmap, lifetime preferred pricing.
 
-Apply: [calendly.com/marlinibukun](https://calendly.com/marlinibukun)
+Apply: [calendly.com/marlinibukun/sentragent-design-partner-call](https://calendly.com/marlinibukun/sentragent-design-partner-call)
 
 ## Repo structure
 
