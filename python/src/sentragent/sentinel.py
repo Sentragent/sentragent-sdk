@@ -97,10 +97,30 @@ class Sentinel:
         self,
         auto_generate: int = 0,
         scenarios: Optional[List[dict]] = None,
+        system_prompt: Optional[str] = None,
+        llm: Optional[Callable[[str], str]] = None,
     ) -> ScenarioReport:
+        """Run a suite of scenarios against the agent.
+
+        Three ways to supply scenarios (combinable):
+        - `scenarios`: your own list of `{"name", "prompt"}` dicts.
+        - `system_prompt` + `llm`: generate scenarios tailored to your agent
+          by red-teaming its own system prompt with an LLM you provide.
+          This is the real "automatic generation from your existing prompts"
+          feature -- it needs your LLM callable because Sentragent doesn't
+          bundle a model.
+        - `auto_generate` alone (no `llm`): falls back to a static library
+          of common failure-mode scenarios. Zero setup, less targeted.
+        """
         suite = list(scenarios or [])
-        if auto_generate:
+
+        if system_prompt and llm:
+            from .generator import generate_scenarios
+
+            suite += generate_scenarios(system_prompt, llm, n=auto_generate or 10)
+        elif auto_generate:
             suite += DEFAULT_SCENARIOS[:auto_generate]
+
         if not suite:
             suite = DEFAULT_SCENARIOS
 

@@ -6,6 +6,8 @@
  * your agent in as a plain async function.
  */
 
+import type { LlmFn } from "./generator";
+
 export interface Scenario {
   name: string;
   prompt: string;
@@ -76,6 +78,21 @@ export interface SentinelOptions {
   judge?: JudgeFn;
 }
 
+export interface RunScenariosOptions {
+  /** Your own scenarios, combined with any auto-generated ones. */
+  scenarios?: Scenario[];
+  /**
+   * Number of scenarios to generate. Combined with `systemPrompt` + `llm`,
+   * these are generated dynamically by red-teaming your agent's own prompt.
+   * Without `llm`, falls back to slicing the static DEFAULT_SCENARIOS library.
+   */
+  autoGenerate?: number;
+  /** The target agent's own system prompt — required for LLM-based generation. */
+  systemPrompt?: string;
+  /** Your LLM callable — required for LLM-based generation. */
+  llm?: LlmFn;
+}
+
 export class Sentinel {
   private agent: AgentFn;
   private judge?: JudgeFn;
@@ -85,13 +102,16 @@ export class Sentinel {
     this.judge = options.judge;
   }
 
-  async runScenarios(
-    opts: { autoGenerate?: number; scenarios?: Scenario[] } = {}
-  ): Promise<ScenarioReport> {
-    const suite: Scenario[] = [
-      ...(opts.scenarios ?? []),
-      ...(opts.autoGenerate ? DEFAULT_SCENARIOS.slice(0, opts.autoGenerate) : []),
-    ];
+  async runScenarios(opts: RunScenariosOptions = {}): Promise<ScenarioReport> {
+    const suite: Scenario[] = [...(opts.scenarios ?? [])];
+
+    if (opts.systemPrompt && opts.llm) {
+      const { generateScenarios } = await import("./generator");
+      suite.push(...(await generateScenarios(opts.systemPrompt, opts.llm, opts.autoGenerate || 10)));
+    } else if (opts.autoGenerate) {
+      suite.push(...DEFAULT_SCENARIOS.slice(0, opts.autoGenerate));
+    }
+
     const finalSuite = suite.length > 0 ? suite : DEFAULT_SCENARIOS;
 
     const report = new ScenarioReport();
@@ -116,3 +136,6 @@ export class Sentinel {
     return report;
   }
 }
+
+export { generateScenarios, ScenarioGenerationError } from "./generator";
+export type { LlmFn } from "./generator";

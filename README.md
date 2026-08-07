@@ -25,6 +25,8 @@ npm install sentragent
 
 ## Quickstart
 
+Zero setup, using the built-in library of common failure-mode scenarios:
+
 ```python
 from sentragent import Sentinel
 
@@ -36,11 +38,34 @@ report = sentinel.run_scenarios(auto_generate=5)
 print(report.summary())
 ```
 
+Scenarios generated dynamically from your agent's own system prompt — bring
+your own LLM call (OpenAI, Anthropic, whatever you already use):
+
+```python
+sentinel = Sentinel(agent=my_agent)
+report = sentinel.run_scenarios(
+    system_prompt=my_agent_system_prompt,
+    llm=my_llm_call,       # any Callable[[str], str]
+    auto_generate=10,
+)
+print(report.summary())
+```
+
 ```typescript
 import { Sentinel } from "sentragent";
 
 const sentinel = new Sentinel({ agent: myAgent });
+
+// Zero setup:
 const report = await sentinel.runScenarios({ autoGenerate: 5 });
+
+// Or generated from your agent's own system prompt:
+const report2 = await sentinel.runScenarios({
+  systemPrompt: myAgentSystemPrompt,
+  llm: myLlmCall, // (prompt: string) => Promise<string> | string
+  autoGenerate: 10,
+});
+
 console.log(report.summary());
 ```
 
