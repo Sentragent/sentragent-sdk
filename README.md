@@ -4,7 +4,7 @@
 
 > Gartner predicts that over 40% of enterprise AI agent projects will fail by 2027 — not because of model limitations, but because of insufficient controls before and after deployment.
 
-Sentragent is an open-source SDK for instrumenting, testing, and continuously monitoring AI agents in production. Compatible with LangChain, CrewAI, and the OpenAI Agents SDK.
+Sentragent is an open-source SDK for instrumenting, testing, and continuously monitoring AI agents in production. Framework-agnostic by design: `Sentinel` only needs a plain `agent(prompt) -> string` callable, so it works with LangChain, CrewAI, Mastra, the OpenAI Agents SDK, or a fully custom agent — no framework-specific integration package required. See [`examples/`](./examples) for LangChain and Mastra.
 
 ## Why Sentragent
 
