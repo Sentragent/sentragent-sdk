@@ -11,6 +11,8 @@ Initial scaffolding — pre-release, phase design partners.
 - Optional custom `judge` function for behavioral scoring.
 - `generate_scenarios()` / `generateScenarios()` — LLM-powered, bring-your-own-LLM generation of adversarial scenarios tailored to your agent's own system prompt (Python + TypeScript).
 - `examples/langchain_example.py` — integration starting point for LangChain agents.
+- `examples/mastra_example.ts` — integration starting point for Mastra agents.
+- `examples/deepseek_example.py` — LLM-generated scenarios using DeepSeek's OpenAI-compatible API, verified end-to-end against the real API.
 
 ### Not yet implemented (roadmap)
 - Publish to PyPI and npm (currently install from source only).

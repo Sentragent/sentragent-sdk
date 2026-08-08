@@ -91,7 +91,7 @@ Apply: [calendly.com/marlinibukun/sentragent-design-partner-call](https://calend
 sentragent-sdk/
 ├── python/           # Python SDK (package "sentragent")
 ├── typescript/       # TypeScript/Node SDK (package "sentragent")
-├── examples/         # Integration examples (LangChain, CrewAI, OpenAI Agents SDK)
+├── examples/         # Integration examples (LangChain, Mastra, CrewAI, OpenAI Agents SDK)
 ├── CHANGELOG.md
 └── LICENSE
 ```
