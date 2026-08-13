@@ -32,6 +32,7 @@ jobs:
   publish-npm:
     name: Publish TypeScript package to npm
     runs-on: ubuntu-latest
+    environment: npm
     permissions:
       id-token: write
       contents: read
