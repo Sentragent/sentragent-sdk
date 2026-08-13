@@ -1,6 +1,6 @@
 {
   "name": "sentragent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Test and monitor AI agents before they break in production.",
   "license": "Apache-2.0",
   "main": "dist/index.js",
