@@ -4,18 +4,27 @@
 
 > Gartner predicts that over 40% of enterprise AI agent projects will fail by 2027 — not because of model limitations, but because of insufficient controls before and after deployment.
 
-Sentragent is an open-source SDK for instrumenting, testing, and continuously monitoring AI agents in production. Framework-agnostic by design: `Sentinel` only needs a plain `agent(prompt) -> string` callable, so it works with LangChain, CrewAI, Mastra, the OpenAI Agents SDK, or a fully custom agent — no framework-specific integration package required. See [`examples/`](./examples) for LangChain and Mastra.
+Sentragent is an open-source SDK for instrumenting, testing, and continuously monitoring AI agents in production. Framework-agnostic by design: `Sentinel` only needs a plain `agent(prompt) -> string` callable, so it works with LangChain, CrewAI, Mastra, the OpenAI Agents SDK, or a fully custom agent — no framework-specific integration package required. See [`examples/`](./examples) for LangChain, Mastra, CrewAI, and the OpenAI Agents SDK.
 
 ## Why Sentragent
 
 - **Automatic adversarial scenario generation** from your existing prompts — no need to hand-write your test cases.
 - **Configurable behavioral scoring** (LLM-as-judge) — your business rules, not generic ones.
-- **Production drift detection** — get alerted before your users do.
-- **Native CI/CD integration** (GitHub Actions) — test your agents on every deploy, just like your code.
+- **Framework-agnostic** — one interface across LangChain, CrewAI, Mastra, the OpenAI Agents SDK, or anything you built yourself.
+
+Production drift detection and a native GitHub Actions integration for running your scenarios on every deploy are on the roadmap — see [CHANGELOG.md](./CHANGELOG.md).
 
 ## Installation
 
-Not yet published to PyPI / npm (coming soon). For now, install from source:
+```bash
+# Python
+pip install sentragent
+
+# TypeScript / Node
+npm install sentragent
+```
+
+To install from source instead (e.g. to contribute):
 
 ```bash
 # Python

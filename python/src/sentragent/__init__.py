@@ -9,4 +9,4 @@ __all__ = [
     "generate_scenarios",
     "ScenarioGenerationError",
 ]
-__version__ = "0.1.0"
+__version__ = "0.1.1"
