@@ -111,4 +111,4 @@ Apache License 2.0 — see [LICENSE](./LICENSE).
 
 ## Contact
 
-marlinibukun@gmail.com · built by [jaceX10](https://github.com/Sentragent)
+[EMAIL_ADDRESS](morganechrisnaud2005@gmail.com) · built by [jaceX10](https://github.com/Sentragent)
